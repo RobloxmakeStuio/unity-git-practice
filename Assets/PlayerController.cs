@@ -23,9 +23,15 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameObject Bullet = Instantiate(BulletPrefab); // 실제로 실제화 하는 것 인스턴스 생성.
-            Bullet.transform.position = transform.position; // 총알 위치 우주선 플레이어 위치로
-            Bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.up * bulletSpeed); // add force 힘 추가해라.
+            for (int i =0; i <3; i++)
+            {
+                GameObject Bullet = Instantiate(BulletPrefab);
+                Vector3 bulletPos = transform.position;
+                bulletPos.y += 0.3f * i;
+                Bullet.transform.position = bulletPos;
+                Bullet.GetComponent<Rigidbody2D>().AddForce(Vector2.up * bulletSpeed);
+            }
+            
         }
     }
 }
