@@ -1,9 +1,7 @@
 using UnityEngine;
-
 public class Enemy : MonoBehaviour
 {
     float health = 100f;
-
     void Start()
     {
         
@@ -36,6 +34,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet")) 
         {
             TakeDamage(10);
+            Destroy(collision.gameObject);
         }
 
     }

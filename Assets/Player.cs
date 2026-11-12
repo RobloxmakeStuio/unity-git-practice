@@ -3,7 +3,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     float health = 100f;
-
     void Start()
     {
 
